@@ -1,0 +1,11 @@
+{
+  "name": "arcade",
+  "version": "0.1.0",
+  "devDependencies": {
+    "copy-webpack-plugin": "^8.0.0",
+    "ts-loader": "^8.0.17",
+    "typescript": "^4.2.3",
+    "webpack": "^5.24.3",
+    "webpack-cli": "^4.5.0"
+  }
+}

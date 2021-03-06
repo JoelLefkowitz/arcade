@@ -1,0 +1,35 @@
+{
+  "name": "arcade",
+  "description": "A pure python arcade webapp.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Joel Lefkowitz",
+  "devDependencies": {
+    "grunt": "^1.3.0",
+    "grunt-cli": "^1.3.0"
+  },
+  "portfolio": {
+    "project_type": "Web application",
+    "homepage": "https://joellefkowitz-arcade.readthedocs.io",
+    "languages": [
+      "TypeScript",
+      "Python"
+    ],
+    "frameworks": [
+      "aiohttp",
+      "Ansible",
+      "Nginx",
+      "Postgres",
+      "Pygame",
+      "Skulpt",
+      "Terraform"
+    ],
+    "paradigms": [
+      "Containerised microservices",
+      "Object oriented programming"
+    ],
+    "status": [
+      "In development"
+    ]
+  }
+}
