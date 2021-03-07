@@ -7,13 +7,13 @@
     <meta name="description" content="A pure python arcade webapp." />
     <meta name="theme-color" content="#1976d2" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="./bundle.js" type="text/javascript" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython_stdlib.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <script src="bundle.js"></script>
     <title>Arcade</title>
   </head>
-  <body>
-    <app-root></app-root>
-    <noscript
-      >Please enable JavaScript to continue using this application.</noscript
-    >
+  <body onload="brython()">
+    <script type="text/python" src="python/main.py"></script>
   </body>
 </html>

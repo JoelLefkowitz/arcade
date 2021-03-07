@@ -6,8 +6,9 @@ module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [
-        path.resolve(__dirname, "src", "static"),
+        { from: path.resolve(__dirname, "src", "static"), to: "" },
         { from: path.resolve(__dirname, "src", "assets"), to: "assets" },
+        { from: path.resolve(__dirname, "src", "python"), to: "python" },
       ],
     }),
   ],

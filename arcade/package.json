@@ -9,6 +9,7 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
-    "skulpt": "^1.0.0"
+    "brython": "^3.9.1",
+    "phaser": "^3.52.0"
   }
 }
