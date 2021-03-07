@@ -4,7 +4,7 @@ services:
   arcade:
     image: joellefkowitz/arcade:0.1.0_prod
     ports:
-      - 80:80
+      - 4200:80
     depends_on:
       - scores
 
@@ -13,7 +13,7 @@ services:
     env_file: scores.env
     depends_on:
       - scores_db
-
+    
   scores_db:
     image: joellefkowitz/scores_db:0.1.0_prod
     env_file: scores_db.env

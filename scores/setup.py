@@ -2,8 +2,11 @@ from setuptools import setup
 
 if __name__ == "__main__":
     setup(
-        entry_points={"console_scripts": ["quickdocs = quickdocs.__main__:main"]},
+        entry_points={
+            "console_scripts": ["quickdocs = quickdocs.__main__:main"]
+        },
         install_requires=[
+            "aiohttp",
             "aiopg",
             "asyncio",
             "dataclasses",

@@ -1,4 +1,3 @@
-import json
 from dataclasses import dataclass
 
 
@@ -8,5 +7,5 @@ class Score:
     value: int
 
     @property
-    def json(self):
-        return json.dumps(self.__dict__)
+    def data(self):
+        return self.__dict__

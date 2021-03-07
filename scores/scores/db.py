@@ -1,19 +1,58 @@
-import asyncio
-from safe_environ import from_env
+from inspect import cleandoc
+
 import aiopg
+from safe_environ import from_env
+
+from .models import Score
 
 
-async def insert_score():
-    async with aiopg.create_pool(dsn()) as pool:
-        async with pool.acquire() as conn:
-            async with conn.cursor() as cur:
-                await cur.execute()
+async def insert_score(score):
+    async with aiopg.create_pool(
+        data_source()
+    ) as pool, pool.acquire() as conn, conn.cursor() as cur:
+        await cur.execute(
+            cleandoc(
+                """
+                INSERT INTO scores_score (Name, Value)
+                VALUES (%s, %s);
+                """
+            ),
+            (score.name, score.value),
+        )
 
 
-def dsn(
+async def get_top_scores(count=5):
+    async with aiopg.create_pool(
+        data_source()
+    ) as pool, pool.acquire() as conn, conn.cursor() as cur:
+        await cur.execute(
+            cleandoc(
+                """
+                SELECT Name, Value
+                FROM scores_score 
+                ORDER BY Value 
+                DESC LIMIT %s;
+                """
+            ),
+            (count,),
+        )
+
+        return [Score(*i) async for i in cur]
+
+
+def data_source(
+    host=from_env("POSTGRES_HOST"),
     dbname=from_env("POSTGRES_DB"),
     user=from_env("POSTGRES_USER"),
     password=from_env("POSTGRES_PASSWORD"),
-    host="127.0.0.1",
+    port=5432,
 ):
-    return f"dbname={dbname} user={user} password={password} host={host}"
+    return " ".join(
+        [
+            f"dbname={dbname}",
+            f"user={user}",
+            f"password={password}",
+            f"host={host}",
+            f"port={port}",
+        ]
+    )

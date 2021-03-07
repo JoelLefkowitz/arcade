@@ -5,7 +5,10 @@ module.exports = {
   entry: path.resolve(__dirname, "src", "main.ts"),
   plugins: [
     new CopyPlugin({
-      patterns: [path.resolve(__dirname, "src", "static")],
+      patterns: [
+        path.resolve(__dirname, "src", "static"),
+        { from: path.resolve(__dirname, "src", "assets"), to: "assets" },
+      ],
     }),
   ],
   module: {

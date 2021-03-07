@@ -7,5 +7,5 @@ RUN pip install --upgrade pip
 RUN pip install --no-cache-dir .
 
 COPY . .
-EXPOSE 8000/tcp
-ENTRYPOINT ["entrypoint.sh"]
+EXPOSE 8080/tcp
+ENTRYPOINT ["/scores/entrypoint.sh"]

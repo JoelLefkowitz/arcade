@@ -7,5 +7,8 @@
     "typescript": "^4.2.3",
     "webpack": "^5.24.3",
     "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "skulpt": "^1.0.0"
   }
 }

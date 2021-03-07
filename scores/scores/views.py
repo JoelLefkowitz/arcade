@@ -1,16 +1,20 @@
-from aiohttp.web import View, json_response
-from .db import select_rows
+from aiohttp.web import View, json_response, HTTPUnprocessableEntity
+
+from .db import get_top_scores, insert_score
 from .models import Score
 
 
 class ScoresView(View):
     async def get(self):
-        data = [i async for i in select_rows()]
-        return json_response(data)
+        leaders = await get_top_scores()
+        return json_response([score.data for score in leaders])
 
     async def post(self):
-        # data = Score(name=self.request.name, score=self.request.score)
-        data = {}
-        response = json_response(data)
-        await response.prepare(self.request)
-        await response.write_eof()
+        data = await self.post()
+        
+        if "name" not in data or "value" not in data:
+            raise HTTPUnprocessableEntity
+
+        score = Score(data["name"], data["value"])
+        await insert_score(score)
+        return json_response(score.data)

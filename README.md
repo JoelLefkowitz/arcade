@@ -6,7 +6,7 @@ A pure python arcade webapp.
 
 | Source     | Shields                                                                                                            |
 | ---------- | ------------------------------------------------------------------------------------------------------------------ |
-| Project    | ![release][release_shield] ![license][license_shield] ![dependents][dependents_shield]                             |
+| Project    | ![release][release_shield] ![license][license_shield]                                        §                     |
 | Health     | ![travis][travis_shield] ![codacy][codacy_shield] ![coverage][coverage_shield] ![readthedocs][readthedocs_shield]  |
 | Repository | ![issues][issues_shield] ![pulls][pulls_shield]                                                                    |
 | Activity   | ![contributors][contributors_shield] ![monthly_commits][monthly_commits_shield] ![last_commit][last_commit_shield] |
@@ -122,7 +122,6 @@ Lots of love to the open source community!
 
 [release_shield]: https://img.shields.io/github/v/tag/joellefkowitz/arcade
 [license_shield]: https://img.shields.io/github/license/joellefkowitz/arcade
-[dependents_shield]: https://img.shields.io/librariesio/dependent-repos/pypi/arcade
 
 <!-- Health shields -->
 
