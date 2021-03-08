@@ -3,5 +3,21 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-size: 16px;
+  font-size: 20px;
+}
+
+.snack {
+  position: absolute;
+  width: 300px;
+  bottom: 100px;
+  left: calc(50% - 150px);
+}
+
+.form-field {
+  margin: 10px auto;
+  width: 100%;
+}
+
+.full-lines {
+  line-height: 60px;
 }

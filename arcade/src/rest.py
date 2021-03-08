@@ -1,10 +1,13 @@
-from browser import document, ajax
-
-def get_top_scores(cb=None):
-    ajax.get("api/scores", cb)
+from browser import ajax
 
 
-def post_score(name, score, cb=None):
-    
-    # headers={"Content-Type": "application/json"},
-    ajax.post("api/scores", data={'name': name, 'score': score}, cb)
+def get_top_scores(oncomplete=None):
+    ajax.get("api/scores", oncomplete=oncomplete)
+
+
+def post_score(name, score, oncomplete=None):
+    ajax.post(
+        "api/scores",
+        oncomplete=oncomplete,
+        data={"name": name, "value": score},
+    )

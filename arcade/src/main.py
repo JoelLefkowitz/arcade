@@ -1,8 +1,7 @@
-import javascript
 from browser import window
+from dom import show_results
 from menu import Menu
 from seeker import Seeker
-from rest import get_top_scores, post_score
 
 
 def start_game():
@@ -23,10 +22,10 @@ def start_game():
 
 
 def game_over(score):
-    name = "Joel"
-    get_top_scores(lambda x: print(x))
-    post_score(name, score, lambda x: print(x))
+    top_scores = get_top_scores()
+    show_results(score, top_scores)
 
 
 if __name__ == "__main__":
-    start_game()
+    # start_game()
+    show_results(10, [1, 2, 3])

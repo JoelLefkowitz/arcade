@@ -1,6 +1,6 @@
 import javascript
-from browser import window
 from base import BaseScene
+from browser import window
 
 
 class Menu(BaseScene):

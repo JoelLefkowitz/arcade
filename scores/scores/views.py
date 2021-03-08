@@ -1,7 +1,11 @@
-from aiohttp.web import View, json_response, HTTPUnprocessableEntity
+from logging import getLogger
+
+from aiohttp.web import HTTPUnprocessableEntity, View, json_response
 
 from .db import get_top_scores, insert_score
 from .models import Score
+
+logger = getLogger(__name__)
 
 
 class ScoresView(View):
@@ -11,7 +15,7 @@ class ScoresView(View):
 
     async def post(self):
         data = await self.post()
-        
+
         if "name" not in data or "value" not in data:
             raise HTTPUnprocessableEntity
 

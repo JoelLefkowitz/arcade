@@ -3,8 +3,8 @@ from math import pi
 from random import random
 
 import javascript
-from browser import window
 from base import BaseScene
+from browser import window
 
 
 class Seeker(BaseScene):
