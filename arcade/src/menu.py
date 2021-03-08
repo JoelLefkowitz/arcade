@@ -1,6 +1,6 @@
 import javascript
 from browser import window
-from scenes.base import BaseScene
+from base import BaseScene
 
 
 class Menu(BaseScene):
@@ -21,7 +21,9 @@ class Menu(BaseScene):
         ).setOrigin(0.5)
 
         self.button.setInteractive()
-        self.button.on('pointerover', lambda *args: print('pointerover'))
+        self.button.on(
+            "pointerdown", lambda *args: this.scene.start("Seeker")
+        )
 
     def update(self, *args):
         pass

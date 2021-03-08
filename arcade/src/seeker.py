@@ -1,56 +1,65 @@
+import itertools
 from math import pi
 from random import random
 
 import javascript
 from browser import window
-from scenes.base import BaseScene
+from base import BaseScene
 
 
 class Seeker(BaseScene):
     key = "Seeker"
-    score = 0
+    ufo_count = 10
 
-    ship = None
-    ufo = None
+    scale = window.innerWidth / 15
 
-    max_speed = 100
-    max_acceleration = 20
+    max_speed = 30
+    max_acceleration = 300
 
-    enemy_speed = 0.5
-    enemy_acceleration = 0.7
+    enemy_speed = 1.5
+    enemy_acceleration = 0.3
 
     def preload(self):
         this = javascript.this()
         this.load.setBaseURL("./assets")
         this.load.image("ship", "ship.svg")
-        this.load.image("ufo", "026-ufo.svg")
+
+        self.ufo_imgs = []
+        for i in range(10):
+            self.ufo_imgs.append(f"ufo-{i}")
+            this.load.image(f"ufo-{i}", f"0{26 + i}-ufo.svg")
 
     def create(self, *args):
         this = javascript.this()
         self.create_ship(this)
-        self.create_ufo(this)
+        self.create_ufos(this)
         self.create_score_counter(this)
 
-        this.physics.add.collider(
-            self.ship, self.ufo, lambda *args: self.game_over(this)
-        )
+        for ufo_i, ufo_j in itertools.combinations(self.ufos, 2):
+            this.physics.add.collider(ufo_i, ufo_j)
+
+        for ufo in self.ufos:
+            this.physics.add.collider(
+                self.ship, ufo, lambda *args: self.game_over(this)
+            )
 
     def update(self, *args):
         this = javascript.this()
         self.handle_keys(this)
         self.ship.rotation = self.ship.body.angle + pi / 2
 
-        self.ufo.setAccelerationX(
-            (self.ship.x - self.ufo.x)
-            * self.enemy_acceleration
-            * random()
-        )
+        for ufo in self.ufos:
+            ufo.setAccelerationX(
+                (self.ship.x - ufo.x)
+                * self.enemy_acceleration
+                * random()
+            )
 
-        self.ufo.setAccelerationY(
-            (self.ship.y - self.ufo.y)
-            * self.enemy_acceleration
-            * random()
-        )
+            ufo.setAccelerationY(
+                (self.ship.y - ufo.y)
+                * self.enemy_acceleration
+                * random()
+            )
 
     def game_over(self, this):
         self.callback(self.score)
@@ -80,8 +89,8 @@ class Seeker(BaseScene):
             window.innerWidth / 2, window.innerHeight - 200, "ship"
         ).setOrigin(0.5)
 
-        self.ship.displayHeight = 100
-        self.ship.displayWidth = 100
+        self.ship.displayHeight = self.scale
+        self.ship.displayWidth = self.scale
 
         self.ship.enableBody = True
         self.ship.body.collideWorldBounds = True
@@ -91,20 +100,28 @@ class Seeker(BaseScene):
 
         self.ship.body.maxSpeed = self.max_speed
 
-    def create_ufo(self, this):
-        self.ufo = this.physics.add.sprite(
-            window.innerWidth / 2, 200, "ufo"
-        ).setOrigin(0.5)
+    def create_ufos(self, this):
+        self.ufos = []
 
-        self.ufo.displayHeight = 100
-        self.ufo.displayWidth = 100
+        for i in range(self.ufo_count):
+            ufo = this.physics.add.sprite(
+                window.innerWidth * random(),
+                window.innerHeight * random(),
+                self.ufo_imgs[i % len(self.ufo_imgs)],
+            ).setOrigin(0.5)
 
-        self.ufo.enableBody = True
-        self.ufo.body.collideWorldBounds = True
+            self.ufos.append(ufo)
 
-        self.ufo.body.maxSpeed = self.max_speed * self.enemy_speed
+            ufo.displayHeight = self.scale
+            ufo.displayWidth = self.scale
+
+            ufo.enableBody = True
+            ufo.body.collideWorldBounds = True
+
+            ufo.body.maxSpeed = self.max_speed * self.enemy_speed
 
     def create_score_counter(self, this):
+        self.score = 0
         this.time.addEvent(
             {
                 "delay": 1000,

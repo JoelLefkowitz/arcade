@@ -1,6 +1,8 @@
+import javascript
 from browser import window
-from scenes.menu import Menu
-from scenes.seeker import Seeker
+from menu import Menu
+from seeker import Seeker
+from rest import get_top_scores, post_score
 
 
 def start_game():
@@ -21,7 +23,9 @@ def start_game():
 
 
 def game_over(score):
-    print(score)
+    name = "Joel"
+    get_top_scores(lambda x: print(x))
+    post_score(name, score, lambda x: print(x))
 
 
 if __name__ == "__main__":
