@@ -66,7 +66,9 @@ def results(score):
         <div class="container">
             <div class="row">
                 <div class="col">Your score:</div>
-                <div class="col">{score}</div>
+                <div class="col centered_text">
+                    {score} point{'s' if score != 1 else ''}
+                </div>
             </div>
             <div class="row">
                 <div class="col full-lines">Your name:</div>

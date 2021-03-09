@@ -21,3 +21,8 @@ body {
 .full-lines {
   line-height: 60px;
 }
+
+.centered_text {
+  
+  text-align: center !important; 
+}
