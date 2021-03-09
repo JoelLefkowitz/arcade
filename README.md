@@ -1,6 +1,6 @@
 # Arcade
 
-A pure python arcade webapp.
+A pure Python Phaser webapp.
 
 ## Status
 

@@ -1,7 +1,7 @@
 pull_images:
-  - joellefkowitz/arcade:0.1.0
-  - joellefkowitz/scores:0.1.0
-  - joellefkowitz/scores_db:0.1.0
+  - joellefkowitz/arcade:0.1.0_prod
+  - joellefkowitz/scores:0.1.0_prod
+  - joellefkowitz/scores_db:0.1.0_prod
 env_files:
   - scores.env
   - scores_db.env

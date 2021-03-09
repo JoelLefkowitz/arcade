@@ -1,6 +1,6 @@
 {
   "name": "arcade",
-  "description": "A pure python arcade webapp.",
+  "description": "A pure Python Phaser webapp.",
   "version": "0.1.0",
   "license": "MIT",
   "author": "Joel Lefkowitz",
@@ -12,16 +12,15 @@
     "project_type": "Web application",
     "homepage": "https://joellefkowitz-arcade.readthedocs.io",
     "languages": [
-      "TypeScript",
       "Python"
     ],
     "frameworks": [
-      "aiohttp",
+      "AIOHTTP",
       "Ansible",
+      "Brython",
       "Nginx",
+      "Phaser",
       "Postgres",
-      "Pygame",
-      "Skulpt",
       "Terraform"
     ],
     "paradigms": [
@@ -29,7 +28,7 @@
       "Object oriented programming"
     ],
     "status": [
-      "In development"
+      "Stable"
     ]
   }
 }
