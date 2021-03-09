@@ -6,7 +6,7 @@ A pure python arcade webapp.
 
 | Source     | Shields                                                                                                            |
 | ---------- | ------------------------------------------------------------------------------------------------------------------ |
-| Project    | ![release][release_shield] ![license][license_shield]                                        §                     |
+| Project    | ![release][release_shield] ![license][license_shield]                                                              |
 | Health     | ![travis][travis_shield] ![codacy][codacy_shield] ![coverage][coverage_shield] ![readthedocs][readthedocs_shield]  |
 | Repository | ![issues][issues_shield] ![pulls][pulls_shield]                                                                    |
 | Activity   | ![contributors][contributors_shield] ![monthly_commits][monthly_commits_shield] ![last_commit][last_commit_shield] |
@@ -14,6 +14,10 @@ A pure python arcade webapp.
 ## Architecture
 
 ![Architecture][architecture]
+
+## Motivation
+
+Modern tools for extending Python's capabilities are emerging for both the server and client side. AIOHTTP provides support for asyncronous request handling whilst Brython permits Python scripts to access javascript libraries. As a demonstration of these technologies, this Phaser webapp is entirely written in Python.
 
 ## Installation
 
