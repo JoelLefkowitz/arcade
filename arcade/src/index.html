@@ -19,9 +19,17 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hello, world!</title>
+    <title>Arcade</title>
   </head>
   <body onload="brython()">
+    <div
+      class="modal fade"
+      id="resultsModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="scoresModalLabel"
+      aria-hidden="true"
+    ></div>
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       crossorigin="anonymous"
@@ -44,14 +52,5 @@
     <script src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython_stdlib.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
     <script type="text/python" src="main.py"></script>
-    <div
-      class="modal fade"
-      id="resultsModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-    </div>
   </body>
 </html>

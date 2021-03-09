@@ -1,11 +1,7 @@
-from logging import getLogger
-
 from aiohttp.web import HTTPUnprocessableEntity, View, json_response
 
 from .db import get_top_scores, insert_score
 from .models import Score
-
-logger = getLogger(__name__)
 
 
 class ScoresView(View):
@@ -20,5 +16,6 @@ class ScoresView(View):
             raise HTTPUnprocessableEntity
 
         score = Score(data["name"], data["value"])
+
         await insert_score(score)
         return json_response(score.data)
