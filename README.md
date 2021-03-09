@@ -2,6 +2,8 @@
 
 A pure Python Phaser webapp.
 
+[Try it out!][webapp]
+
 ## Status
 
 | Source     | Shields                                                                                                            |
@@ -11,13 +13,14 @@ A pure Python Phaser webapp.
 | Repository | ![issues][issues_shield] ![pulls][pulls_shield]                                                                    |
 | Activity   | ![contributors][contributors_shield] ![monthly_commits][monthly_commits_shield] ![last_commit][last_commit_shield] |
 
+## Motivation
+
+Modern tools for extending Python's capabilities are emerging for both the server and client side. AIOHTTP provides support for asyncronous request handling whilst Brython permits Python scripts to access javascript libraries. As a demonstration of these technologies, this Phaser webapp is entirely written in Python.
+
 ## Architecture
 
 ![Architecture][architecture]
 
-## Motivation
-
-Modern tools for extending Python's capabilities are emerging for both the server and client side. AIOHTTP provides support for asyncronous request handling whilst Brython permits Python scripts to access javascript libraries. As a demonstration of these technologies, this Phaser webapp is entirely written in Python.
 
 ## Installation
 
@@ -118,6 +121,7 @@ Lots of love to the open source community!
 <!-- External links -->
 
 [readthedocs]: https://joellefkowitz-arcade.readthedocs.io/en/latest/
+[webapp]: https://arcade.joellefkowitz.co.uk
 [semver]: http://semver.org/
 [coffee]: https://www.buymeacoffee.com/joellefkowitz
 [coffee_button]: https://cdn.buymeacoffee.com/buttons/default-blue.png
