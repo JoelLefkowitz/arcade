@@ -11,6 +11,10 @@ A pure python arcade webapp.
 | Repository | ![issues][issues_shield] ![pulls][pulls_shield]                                                                    |
 | Activity   | ![contributors][contributors_shield] ![monthly_commits][monthly_commits_shield] ![last_commit][last_commit_shield] |
 
+## Architecture
+
+![Architecture][architecture]
+
 ## Installation
 
 ```bash
@@ -105,6 +109,7 @@ Lots of love to the open source community!
 
 [pulls]: https://github.com/JoelLefkowitz/arcade/pulls
 [issues]: https://github.com/JoelLefkowitz/arcade/issues
+[architecture]: https://github.com/JoelLefkowitz/arcade/raw/master/architecture.png
 
 <!-- External links -->
 

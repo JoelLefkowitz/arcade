@@ -4,9 +4,18 @@ services:
   arcade:
     image: joellefkowitz/arcade:0.1.0_prod
     ports:
-      - 4200:80
+      - 80:80
+      - 443:443
     depends_on:
       - scores
+
+    volumes:
+      - type: bind
+        source: /etc/letsencrypt/live/arcade.joellefkowitz.co.uk/fullchain.pem
+        target: /etc/nginx/arcade.joellefkowitz.co.uk.crt
+      - type: bind
+        source: /etc/letsencrypt/live/arcade.joellefkowitz.co.uk/privkey.pem
+        target: /etc/nginx/arcade.joellefkowitz.co.uk.key
 
   scores:
     image: joellefkowitz/scores:0.1.0_prod
