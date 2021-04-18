@@ -1,6 +1,9 @@
-from aiohttp.web import HTTPUnprocessableEntity, View, json_response
+from aiohttp.web import HTTPUnprocessableEntity
+from aiohttp.web import View
+from aiohttp.web import json_response
 
-from .db import get_top_scores, insert_score
+from .db import get_top_scores
+from .db import insert_score
 from .models import Score
 
 

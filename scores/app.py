@@ -1,5 +1,4 @@
 from aiohttp.web import Application
-
 from scores.urls import urlpatterns
 
 

@@ -1,0 +1,68 @@
+output_dir: .
+
+clear_top_level: true
+logical_grouping: true
+
+collections:
+  - common
+  - pwa
+
+collection_sources:
+  - templ8_pwa
+
+loader_paths:
+  - docs
+
+render_context:
+  project:
+    project_name: arcade
+    version: 0.1.0
+
+    verbose_name: Arcade
+    description: A pure Python Phaser webapp.
+
+    repository: https://github.com/JoelLefkowitz/arcade
+    codacy_id: ef1f0bc7a29c40dbafa33d69163694fe
+
+    inserts:
+      - usage.md
+
+  author:
+    author: Joel Lefkowitz
+    author_email: joellefkowitz@hotmail.com
+    author_github_handle: joellefkowitz
+
+  pwa:
+    terraform_prefix: arcade
+    app_name: arcade
+    docker_namespace: joellefkowitz
+    server_name: arcade_server
+
+    # cspell:disable-next-line
+    aws_public_key: AKIAJUIXDXBKSWSVTZKA # nosec - Public key component
+
+  portfolio:
+    is_portfolio: true
+    status_level: 5
+    homepage: https://arcade.joellefkowitz.co.uk
+
+    languages:
+      - TypeScript
+      - Python
+
+    frameworks:
+      - Angular
+      - Ansible
+      - Concourse
+      - Django
+      - Grafana
+      - Locust
+      - Memcached
+      - Nginx
+      - Postgres
+      - Prometheus
+      - Terraform
+
+    paradigms:
+      - Containerised microservices
+      - Object oriented programming

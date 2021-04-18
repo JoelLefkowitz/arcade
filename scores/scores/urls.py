@@ -1,4 +1,5 @@
-from aiohttp.web import get, post
+from aiohttp.web import get
+from aiohttp.web import post
 
 from .views import ScoresView
 

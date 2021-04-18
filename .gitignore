@@ -1,8 +1,4 @@
 __pypackages__/
-!.vscode/extensions.json
-!.vscode/launch.json
-!.vscode/settings.json
-!.vscode/tasks.json
 .c9/
 .cache
 .classpath
@@ -38,7 +34,6 @@ __pypackages__/
 *.egg
 *.egg-info/
 *.env
-*.env
 *.launch
 *.log
 *.manifest
@@ -61,6 +56,7 @@ celerybeat-schedule/
 celerybeat.pid
 chrome-profiler-events*.json
 connect.lock
+cov.xml
 coverage.xml
 coverage/
 develop-eggs/
@@ -69,9 +65,7 @@ dmypy.json
 docs/_build/
 downloads/
 eggs/
-env.bak/
 env/
-ENV/
 htmlcov/
 instance/
 ipython_config.py
@@ -88,8 +82,6 @@ pip-delete-this-directory.txt
 pip-log.txt
 pip-wheel-metadata/
 profile_default/
-regisrty/media
-regisrty/registry/media
 sdist/
 share/python-wheels/
 site/
@@ -106,3 +98,6 @@ venv.bak/
 venv/
 wheels/
 yarn-error.log
+
+# Exclusions must succeed inclusions
+!public.*.env

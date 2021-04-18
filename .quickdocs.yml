@@ -3,5 +3,4 @@ version: 0.1.0
 author: Joel Lefkowitz
 verbose_name: Arcade
 html_title: Arcade
-github_url: JoelLefkowitz/arcade
-apidoc_module_dir: scores
+github_url: https://github.com/JoelLefkowitz/arcade

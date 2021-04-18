@@ -1,6 +1,7 @@
+import datetime
 import re
 import sys
-import datetime
+
 import pypandoc
 
 sys.path.append("..")
