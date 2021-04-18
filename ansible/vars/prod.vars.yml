@@ -1,0 +1,20 @@
+domains: None
+docker_username: joellefkowitz
+stack_name: prod
+compose_file: prod.docker-compose.yml
+
+pull_images:
+  - postgres:13
+  - joellefkowitz/arcade:prod
+  - joellefkowitz/arcade_ssr:prod
+  - joellefkowitz/arcade_server:prod
+
+env_files:
+  - env/public.app.env
+  - env/public.postgres.env
+  - env/public.server.env
+
+  # Production environment
+  - env/prod.app.env
+  - env/prod.postgres.env
+  - env/prod.server.env

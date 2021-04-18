@@ -1,0 +1,273 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "arcade": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/arcade/browser",
+            "index": "src/static/index.html",
+            "main": "src/main.browser.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsc/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "src/assets/",
+                "output": "/assets/"
+              },
+
+              {
+                "glob": "**/*",
+                "input": "src/static/",
+                "output": "/"
+              }
+            ],
+            "styles": ["src/styles/styles.scss", "src/styles/mat-theme.scss"]
+          },
+          "configurations": {
+            "prod": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "conf/ngsw-config.json"
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.staging.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "conf/ngsw-config.json"
+            },
+            "dev": {
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "vendorChunk": false
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "arcade:build"
+          },
+          "configurations": {
+            "prod": {
+              "browserTarget": "arcade:build:prod"
+            },
+            "staging": {
+              "browserTarget": "arcade:build:staging"
+            },
+            "dev": {
+              "browserTarget": "arcade:build:dev"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "arcade:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "src/tests.unit.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsc/tsconfig.spec.json",
+            "karmaConfig": "tests/unit.conf.js",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "src/assets/",
+                "output": "/assets/"
+              },
+
+              {
+                "glob": "**/*",
+                "input": "src/static/",
+                "output": "/"
+              }
+            ],
+            "styles": ["src/styles/styles.scss", "src/styles/mat-theme.scss"]
+          }
+        },
+        "integration": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "src/tests.integration.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsc/tsconfig.spec.json",
+            "karmaConfig": "tests/integration.conf.js",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "src/assets/",
+                "output": "/assets/"
+              },
+
+              {
+                "glob": "**/*",
+                "input": "src/static/",
+                "output": "/"
+              }
+            ],
+            "styles": ["src/styles/styles.scss", "src/styles/mat-theme.scss"]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "eslintConfig": ".eslintrc.json",
+            "lintFilePatterns": ["**/*.ts"]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "tests/e2e.conf.js",
+            "devServerTarget": "arcade:serve"
+          },
+          "configurations": {
+            "prod": {
+              "devServerTarget": "arcade:serve:prod"
+            },
+            "staging": {
+              "devServerTarget": "arcade:serve:staging"
+            },
+            "dev": {
+              "devServerTarget": "arcade:serve:dev"
+            }
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/arcade/server",
+            "main": "server.ts",
+            "tsConfig": "tsc/tsconfig.server.json"
+          },
+          "configurations": {
+            "prod": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            },
+            "staging": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.staging.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            },
+            "dev": {
+              "outputHashing": "media",
+              "sourceMap": false
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "arcade:build",
+            "serverTarget": "arcade:server"
+          },
+          "configurations": {
+            "prod": {
+              "browserTarget": "arcade:build:prod",
+              "serverTarget": "arcade:server:prod"
+            },
+            "staging": {
+              "browserTarget": "arcade:build:staging",
+              "serverTarget": "arcade:server:staging"
+            },
+            "dev": {
+              "browserTarget": "arcade:build:dev",
+              "serverTarget": "arcade:server:dev"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "arcade:build:prod",
+            "serverTarget": "arcade:server:prod",
+            "routes": ["/"]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "arcade"
+}

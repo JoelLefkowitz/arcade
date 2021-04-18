@@ -1,0 +1,27 @@
+@import "palettes";
+@import "~@angular/material/theming";
+
+$primary: mat-color($primary-palette, 500);
+$secondary: mat-color($secondary-palette, 500);
+
+$dark-primary: mat-color($dark-primary-palette, 500);
+$dark-secondary: mat-color($dark-secondary-palette, 500);
+$warn: #f44336;
+
+$light-foreground: #fafafa;
+$light-background: #e4e4e4;
+
+$dark-foreground: #424242;
+$darker-foreground: #050505;
+$dark-background: #0e0b0b;
+
+$grey-text: #d8d8d8;
+$grey-block: #343434;
+
+$light-grey-text: #eee;
+
+$primary-split-left: #d6d1a7;
+$primary-split-right: #d6b9a7;
+
+$accent: #99f;
+$complement: #fc9;

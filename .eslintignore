@@ -1,0 +1,15 @@
+!README.md
+.*
+*.md
+**/.DS_Store
+**/.git
+**/*.Dockerfile
+**/*.env
+**/*docker-compose.yml
+**/coverage
+**/dist
+**/docs
+**/library
+**/node_modules
+**/sqlite3
+**/venv

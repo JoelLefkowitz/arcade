@@ -1,0 +1,7 @@
+[MASTER]
+
+ignore=.,conf.py
+
+[MESSAGES CONTROL]
+
+disable = C0114, C0115, R0902, C0330, E0401

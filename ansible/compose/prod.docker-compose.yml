@@ -1,0 +1,36 @@
+version: "3.3"
+
+services:
+  arcade_nginx:
+    image: joellefkowitz/arcade_nginx:prod
+    env_file: prod.arcade_nginx.env
+    
+    ports:
+      - 80:80
+      - 443:443
+
+    volumes:
+      - type: bind
+        source: /etc/letsencrypt/live/None/fullchain.pem
+        target: /etc/nginx/None.crt
+      - type: bind
+        source: /etc/letsencrypt/live/None/privkey.pem
+        target: /etc/nginx/None.key
+
+    depends_on:
+      - arcade
+      - arcade_server
+
+  arcade:
+    image: joellefkowitz/arcade:prod
+    env_file: prod.arcade.env
+
+  arcade_server:
+    image: joellefkowitz/arcade_server:prod
+    env_file: prod.arcade_server.env
+    depends_on:
+      - arcade_server_db
+
+  arcade_server_db:
+    image: joellefkowitz/arcade_server_db:prod
+    env_file: prod.arcade_server_db.env

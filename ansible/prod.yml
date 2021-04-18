@@ -1,0 +1,49 @@
+- hosts: localhost
+  vars:
+    aliases:
+      swarm_initiator: &swarm_initiator manager[0]
+
+      swarm_join_addr: &swarm_join_addr >-
+        "{{ hostvars[swarm_initiator]['swarm_join_addr'] }}"
+
+      swarm_manager_token: &swarm_manager_token >-
+        "{{ hostvars[swarm_initiator]['swarm_manager_token'] }}"
+
+      swarm_worker_token: &swarm_worker_token >-
+        "{{ hostvars[swarm_initiator]['swarm_worker_token'] }}"
+
+      play_defaults: &play_defaults
+        user: root
+        vars_files: staging.vars.yml
+
+      register_swarm_initiator: &register_swarm_initiator
+        - name: Fetch the swarm initiator host
+          set_fact:
+            swarm_initiator: "{{groups['manager'][0]}}"
+
+- hosts: *swarm_initiator
+  <<: *play_defaults
+  roles:
+    - joellefkowitz.swarmroles.swarm_initiator
+    - joellefkowitz.swarmroles.certbot
+
+- hosts: manager
+  <<: *play_defaults
+  pre_tasks: *register_swarm_initiator
+  roles:
+    - role: joellefkowitz.swarmroles.swarm_manager
+      swarm_join_addr: *swarm_join_addr
+      swarm_manager_token: *swarm_manager_token
+
+- hosts: worker
+  <<: *play_defaults
+  pre_tasks: *register_swarm_initiator
+  roles:
+    - role: joellefkowitz.swarmroles.swarm_worker
+      swarm_join_addr: *swarm_join_addr
+      swarm_worker_token: *swarm_worker_token
+
+- hosts: *swarm_initiator
+  <<: *play_defaults
+  roles:
+    - joellefkowitz.swarmroles.stack_deployer

@@ -1,0 +1,79 @@
+@import "src/styles/colors.scss";
+@import "src/styles/sizing.scss";
+
+html,
+body {
+  font-family: "Inter", cursive;
+  font-size: 12px;
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  color: $grey-text;
+  background-color: $dark-background;
+
+  overscroll-behavior-y: none;
+}
+
+h1 {
+  font-family: "Yusei Magic", sans-serif;
+  font-size: 4em;
+
+  margin: 0;
+  margin-bottom: 0;
+
+  text-align: center;
+
+  color: $primary-split-left;
+}
+
+h2 {
+  font-family: "Balsamiq Sans", cursive;
+  margin: 0;
+
+  text-align: center;
+
+  color: $complement;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 1.4em;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+@media screen and (min-width: 500px) {
+  body {
+    font-size: 16 px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: $screen-md) {
+  body {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: $screen-lg) {
+  body {
+    font-size: 24px;
+  }
+}

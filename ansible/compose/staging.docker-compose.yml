@@ -1,0 +1,35 @@
+version: "3.3"
+
+services:
+  arcade_nginx:
+    image: joellefkowitz/arcade_nginx:staging
+    env_file: staging.arcade_nginx.env
+    ports:
+      - 80:80
+      - 443:443
+
+    volumes:
+      - type: bind
+        source: /etc/letsencrypt/live/staging.None/fullchain.pem
+        target: /etc/nginx/staging.None.crt
+      - type: bind
+        source: /etc/letsencrypt/live/staging.None/privkey.pem
+        target: /etc/nginx/staging.None.key
+
+    depends_on:
+      - arcade
+      - arcade_server
+
+  arcade:
+    image: joellefkowitz/arcade:staging
+    env_file: staging.arcade.env
+
+  arcade_server:
+    image: joellefkowitz/arcade_server:staging
+    env_file: staging.arcade_server.env
+    depends_on:
+      - arcade_server_db
+
+  arcade_server_db:
+    image: joellefkowitz/arcade_server_db:staging
+    env_file: staging.arcade_server_db.env

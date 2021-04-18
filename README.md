@@ -128,10 +128,10 @@ Lots of love to the open source community!
 [languages_shield]: https://img.shields.io/github/languages/count/joellefkowitz/arcade
 
 <!-- Health shields -->
-[codacy_shield]: https://img.shields.io/codacy/grade/None
+[codacy_shield]: https://img.shields.io/codacy/grade/ef1f0bc7a29c40dbafa33d69163694fe
 [readthedocs_shield]: https://img.shields.io/readthedocs/arcade
 [travis_shield]: https://img.shields.io/travis/com/joellefkowitz/arcade
-[codacy_coverage_shield]: https://img.shields.io/codacy/coverage/None
+[codacy_coverage_shield]: https://img.shields.io/codacy/coverage/ef1f0bc7a29c40dbafa33d69163694fe
 
 <!-- Repository shields -->
 [issues_shield]: https://img.shields.io/github/issues/joellefkowitz/arcade

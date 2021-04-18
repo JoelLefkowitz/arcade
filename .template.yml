@@ -6,6 +6,7 @@ logical_grouping: true
 collections:
   - common
   - pwa
+  - devops
 
 collection_sources:
   - templ8_pwa

@@ -1,0 +1,20 @@
+domains: staging.None
+docker_username: joellefkowitz
+stack_name: staging
+compose_file: staging.docker-compose.yml
+
+pull_images:
+  - postgres:13
+  - joellefkowitz/arcade:staging
+  - joellefkowitz/arcade_ssr:staging
+  - joellefkowitz/arcade_server:staging
+
+env_files:
+  - env/public.app.env
+  - env/public.postgres.env
+  - env/public.server.env
+
+  # Staging environment
+  - env/staging.app.env
+  - env/staging.postgres.env
+  - env/staging.server.env

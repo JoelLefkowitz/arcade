@@ -1,0 +1,27 @@
+version: "3.3"
+
+services:
+  arcade_nginx:
+    image: joellefkowitz/arcade_nginx:dev
+    env_file: dev.arcade_nginx.env
+    
+    ports:
+      - 4200:80
+    
+    depends_on:
+      - arcade
+      - arcade_server
+
+  arcade:
+    image: joellefkowitz/arcade:dev
+    env_file: dev.arcade.env
+
+  arcade_server:
+    image: joellefkowitz/arcade_server:dev
+    env_file: dev.arcade_server.env
+    depends_on:
+      - arcade_server_db
+
+  arcade_server_db:
+    image: joellefkowitz/arcade_server_db:dev
+    env_file: dev.arcade_server_db.env

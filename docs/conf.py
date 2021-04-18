@@ -1,7 +1,6 @@
-import datetime
 import re
 import sys
-
+import datetime
 import pypandoc
 
 sys.path.append("..")
@@ -42,16 +41,13 @@ typehints_fully_qualified = True
 autodoc_default_flags = ["members", "undoc-members"]
 napoleon_google_docstring = True
 
-apidoc_module_dir = "../scores"
-apidoc_extra_args = ["-e"]
-
 """
     Yummy sphinx theme settings
 """
 html_theme = "yummy_sphinx_theme"
 html_theme_options = {
     "navbar_icon": "spin fa-book",
-    "github_url": "JoelLefkowitz/arcade"
+    "github_url": "https://github.com/JoelLefkowitz/arcade"
 }
 
 """
@@ -62,7 +58,13 @@ html_theme_options = {
 copyright = f"{datetime.datetime.now().year} {author}"
 
 with open("../README.md", "r") as stream:
-    html_readme = pypandoc.convert(stream.read(), "html", format="md", extra_args=["-fmarkdown-implicit_figures"])
+    html_readme = pypandoc.convert(
+        stream.read(),
+        "html",
+        format="md",
+        extra_args=["-s", "-fmarkdown-implicit_figures"]
+    )
+    
     headerless_readme = re.sub("<h1.*>.*?</h1>", "", html_readme, flags=re.DOTALL)
 
 with open("README.html", "w") as stream:
