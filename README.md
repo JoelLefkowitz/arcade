@@ -2,154 +2,97 @@
 
 A pure Python Phaser webapp.
 
-[Try it out!][webapp]
-
-## Status
-
-| Source     | Shields                                                                                                            |
-| ---------- | ------------------------------------------------------------------------------------------------------------------ |
-| Project    | ![release][release_shield] ![license][license_shield]                                                              |
-| Health     | ![travis][travis_shield] ![codacy][codacy_shield] ![coverage][coverage_shield] ![readthedocs][readthedocs_shield]  |
-| Repository | ![issues][issues_shield] ![pulls][pulls_shield]                                                                    |
-| Activity   | ![contributors][contributors_shield] ![monthly_commits][monthly_commits_shield] ![last_commit][last_commit_shield] |
+![Review](https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/arcade/review.yml)
+![Version](https://img.shields.io/pypi/v/arcade)
+![Downloads](https://img.shields.io/pypi/dw/arcade)
+![Quality](https://img.shields.io/codacy/grade/ef1f0bc7a29c40dbafa33d69163694fe)
+![Coverage](https://img.shields.io/codacy/coverage/ef1f0bc7a29c40dbafa33d69163694fe)
 
 ## Motivation
 
-Modern tools for extending Python's capabilities are emerging for both the server and client side. AIOHTTP provides support for asyncronous request handling whilst Brython permits Python scripts to access javascript libraries. As a demonstration of these technologies, this Phaser webapp is entirely written in Python.
+Modern tools for extending Python's capabilities are emerging for both the server and client side. AIOHTTP provides support for asynchronous request handling whilst Brython permits Python scripts to access javascript libraries. As a demonstration of these technologies, this Phaser webapp is entirely written in Python.
 
-## Architecture
+[Try it out!][webapp]
+
+## Design
 
 ![Architecture][architecture]
-
 
 ## Installation
 
 ```bash
-git clone https://github.com/JoelLefkowitz/arcade
-```
-
-## Tests
-
-To run unit tests:
-
-```bash
-grunt tests:unit
-```
-
-To generate a coverage report:
-
-```bash
-grunt tests:coverage
+pip install arcade
 ```
 
 ## Documentation
 
-This repository's documentation is hosted on [readthedocs][readthedocs].
-
-To generate the sphinx configuration:
-
-```bash
-grunt docs:generate
-```
-
-Then build the documentation:
-
-```bash
-grunt docs:build
-```
+Documentation and more detailed examples are hosted on [Github Pages](https://joellefkowitz.github.io/arcade).
 
 ## Tooling
+
+### Dependencies
+
+To install dependencies:
+
+```bash
+yarn install
+pip install .[all]
+```
+
+### Tests
+
+To run tests:
+
+```bash
+thx test
+```
+
+### Documentation
+
+To generate the documentation locally:
+
+```bash
+thx docs
+```
+
+### Linters
 
 To run linters:
 
 ```bash
-grunt lint
+thx lint
 ```
+
+### Formatters
 
 To run formatters:
 
 ```bash
-grunt format
+thx format
 ```
 
-Before commiting new code:
+## Contributing
 
-```bash
-grunt precommit
-```
+Please read this repository's [Code of Conduct](CODE_OF_CONDUCT.md) which outlines our collaboration standards and the [Changelog](CHANGELOG.md) for details on breaking changes that have been made.
 
-This will run linters, formaters, generate a test coverage report and the sphinx configuration.
+This repository adheres to semantic versioning standards. For more information on semantic versioning visit [SemVer](https://semver.org).
 
-## Versioning
-
-This repository adheres to semantic versioning standards.
-For more inforamtion on semantic versioning visit [SemVer][semver].
-
-Bump2version is used to version and tag changes.
-For example:
+Bump2version is used to version and tag changes. For example:
 
 ```bash
 bump2version patch
 ```
 
-## Changelog
+### Contributors
 
-Please read this repository's [CHANGELOG](CHANGELOG.md) for details on changes that have been made.
-
-## Contributing
-
-Please read this repository's guidelines on [CONTRIBUTING](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-## Contributors
-
-- **Joel Lefkowitz** - _Initial work_ - [Joel Lefkowitz][joellefkowitz]
-
-[![Buy Me A Coffee][coffee_button]][coffee]
+- [Joel Lefkowitz](https://github.com/joellefkowitz) - Initial work
 
 ## Remarks
 
 Lots of love to the open source community!
 
-![Be kind][be_kind]
-
-<!-- Github links -->
-
-[pulls]: https://github.com/JoelLefkowitz/arcade/pulls
-[issues]: https://github.com/JoelLefkowitz/arcade/issues
-[architecture]: https://github.com/JoelLefkowitz/arcade/raw/master/architecture.png
-
-<!-- External links -->
-
-[readthedocs]: https://joellefkowitz-arcade.readthedocs.io/en/latest/
-[webapp]: https://arcade.joellefkowitz.co.uk
-[semver]: http://semver.org/
-[coffee]: https://www.buymeacoffee.com/joellefkowitz
-[coffee_button]: https://cdn.buymeacoffee.com/buttons/default-blue.png
-[be_kind]: https://media.giphy.com/media/osAcIGTSyeovPq6Xph/giphy.gif
-
-<!-- Acknowledgments -->
-
-[joellefkowitz]: https://github.com/JoelLefkowitz
-
-<!-- Project shields -->
-
-[release_shield]: https://img.shields.io/github/v/tag/joellefkowitz/arcade
-[license_shield]: https://img.shields.io/github/license/joellefkowitz/arcade
-
-<!-- Health shields -->
-
-[travis_shield]: https://img.shields.io/travis/joellefkowitz/arcade
-[codacy_shield]: https://img.shields.io/codacy/coverage/arcade
-[coverage_shield]: https://img.shields.io/codacy/grade/arcade
-[readthedocs_shield]: https://img.shields.io/readthedocs/joellefkowitz-arcade
-
-<!-- Repository shields -->
-
-[issues_shield]: https://img.shields.io/github/issues/joellefkowitz/arcade
-[pulls_shield]: https://img.shields.io/github/issues-pr/joellefkowitz/arcade
-
-<!-- Activity shields -->
-
-[contributors_shield]: https://img.shields.io/github/contributors/joellefkowitz/arcade
-[monthly_commits_shield]: https://img.shields.io/github/commit-activity/m/joellefkowitz/arcade
-[last_commit_shield]: https://img.shields.io/github/last-commit/joellefkowitz/arcade
+<div align='center'>
+    <img width=200 height=200 src='https://media.giphy.com/media/osAcIGTSyeovPq6Xph/giphy.gif' alt='Be kind to your mind' />
+    <img width=200 height=200 src='https://media.giphy.com/media/KEAAbQ5clGWJwuJuZB/giphy.gif' alt='Love each other' />
+    <img width=200 height=200 src='https://media.giphy.com/media/WRWykrFkxJA6JJuTvc/giphy.gif' alt="It's ok to have a bad day" />
+</div>
