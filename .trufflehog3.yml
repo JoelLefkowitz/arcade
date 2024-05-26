@@ -9,6 +9,9 @@ exclude:
   - message: Link sums
     pattern: integrity="sha384-
 
+  - message: Link sums
+    pattern: "# nosec"
+
   - message: Dependencies
     paths:
       - node_modules

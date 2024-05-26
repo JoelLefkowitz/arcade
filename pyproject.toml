@@ -18,7 +18,7 @@ classifiers = [
 ]
 
 requires-python = ">=3.8"
-dependencies = ["urllib3~=1.26.0", "brython~=3.11.0"]
+dependencies = ["attrs>=19.2.0", "urllib3~=1.26.0", "brython~=3.11.0"]
 
 [project.optional-dependencies]
 all = [

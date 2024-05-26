@@ -28,6 +28,7 @@
     "lefkowitz",
     "matplotlib",
     "mypy",
+    "nosec",
     "opengraph",
     "pointerdown",
     "pycache",

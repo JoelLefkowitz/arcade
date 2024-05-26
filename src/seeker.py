@@ -33,11 +33,11 @@ class Seeker(BaseScene):
     def preload(self):
         this = javascript.this()
         this.load.setBaseURL("./assets")
-        this.load.image("ship", "ship.svg")
+        this.load.image("ship", "images/ship.svg")
 
         for i, svg in enumerate(self.ufo_svgs):
             self.ufo_sprites.append(f"ufo-{i}")
-            this.load.image(f"ufo-{i}", svg)
+            this.load.image(f"ufo-{i}", f"images/{svg}")
 
     def create(self, *args):
         this = javascript.this()
