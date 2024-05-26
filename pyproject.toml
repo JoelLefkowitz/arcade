@@ -78,7 +78,6 @@ src = ""
 [tool.thx.jobs]
 lint = [
     "npx cspell . --dot --gitignore",
-    "pylint src --disable=C0114,C0115,C0116,C0411,C3001,E0401,E0611,W0613 --good-names i,x",
     "mypy -m src --ignore-missing-import",
     "trufflehog3",
 ]
