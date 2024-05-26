@@ -1,4 +1,4 @@
-from src.app.scores import rank
+from src.scores import rank
 
 
 def test_rank() -> None:

@@ -1,7 +1,7 @@
 import sys
 from dataclasses import dataclass
 
-sys.path.append("src/app")
+sys.path.append("src")
 
 
 @dataclass
