@@ -10,13 +10,13 @@ A pure Python Phaser webapp.
 
 Modern tools for extending Python's capabilities are emerging for both the server and client side. AIOHTTP provides support for asynchronous request handling whilst Brython permits Python scripts to access javascript libraries. As a demonstration of these technologies, this Phaser webapp is entirely written in Python.
 
-## Design
-
-![Architecture](docs/images/architecture.png)
-
 ## Documentation
 
 Documentation and more detailed examples are hosted on [Github Pages](https://joellefkowitz.github.io/arcade).
+
+## Design
+
+![Architecture](docs/images/architecture.png)
 
 ## Tooling
 
