@@ -3,8 +3,6 @@
 A pure Python Phaser webapp.
 
 ![Review](https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/arcade/review.yml)
-![Version](https://img.shields.io/pypi/v/arcade)
-![Downloads](https://img.shields.io/pypi/dw/arcade)
 ![Quality](https://img.shields.io/codacy/grade/ef1f0bc7a29c40dbafa33d69163694fe)
 ![Coverage](https://img.shields.io/codacy/coverage/ef1f0bc7a29c40dbafa33d69163694fe)
 
@@ -15,12 +13,6 @@ Modern tools for extending Python's capabilities are emerging for both the serve
 ## Design
 
 ![Architecture](docs/images/architecture.png)
-
-## Installation
-
-```bash
-pip install arcade
-```
 
 ## Documentation
 
